@@ -1,0 +1,23 @@
+name: example
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: {}
+
+jobs:
+  success:
+    runs-on: ubuntu-latest
+    name: success
+    steps:
+      - name: grep
+        run: "echo 'foo' | grep 'o'"
+
+  failure:
+    runs-on: ubuntu-latest
+    name: failure
+    steps:
+      - name: grep
+        run: "echo 'foo' | grep 'r'"
+
