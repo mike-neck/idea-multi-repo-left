@@ -11,4 +11,9 @@ class LibraryTest {
         Library classUnderTest = new Library();
         assertTrue(classUnderTest.someLibraryMethod(), "someLibraryMethod should return 'true'");
     }
+
+    @SuppressWarnings("ResultOfMethodCallIgnored")
+    @Test void getInstanceMethodThrowsException() {
+        assertThrows(NullPointerException.class, Library::getInstance);
+    }
 }
